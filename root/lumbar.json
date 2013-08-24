@@ -1,0 +1,33 @@
+{
+  "scope": "none",
+  "packages": {
+    "dependencies": {
+      "modules": [
+        "jquery"
+      ]
+    },
+    "{%= name %}": {
+      "modules": [
+        "{%= name %}"
+      ]
+    }
+  },
+  "modules": {
+    "jquery": {
+      "scripts": [
+        "libs/jquery/jquery-1.10.2.js"
+      ]
+    },
+    "{%= name %}": {
+      "scripts": [
+        "src/intro.js",
+        "src/debug.js",
+        "src/settings-validator.js",
+        "src/{%= primary_class_name %}.js",
+        "src/main.js",
+        "src/defaults.js",
+        "src/outro.js"
+      ]
+    }
+  }
+}
