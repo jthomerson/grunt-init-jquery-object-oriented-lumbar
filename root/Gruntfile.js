@@ -85,13 +85,13 @@ module.exports = function(grunt) {
 
    // Default task.
    grunt.registerTask('default', [
-      'qunit',
       'clean',
       'jshint:gruntfile',
       'jshint:test',
       'concat:dist',
       'concat:moduleVariables',
       'jshint:dist',
+      'qunit',
       'uglify'
    ]);
 
