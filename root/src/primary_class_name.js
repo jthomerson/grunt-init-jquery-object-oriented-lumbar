@@ -15,7 +15,7 @@ function {%= primary_class_name %}($element, settings) {
    // object for the element.
 
    var newContents = 'my component ran: ' +
-      (settings.something !== false ? settings.something : 'not overridden');
+      (this.settings.something !== false ? this.settings.something : 'not overridden');
    this.$element.html(newContents);
 
 };

@@ -1,5 +1,5 @@
 function debug(msg) {
-   if (console && console.log) {
-      console.log(msg);
+   if (window.console && window.console.log) {
+      window.console.log(msg);
    }
 }
