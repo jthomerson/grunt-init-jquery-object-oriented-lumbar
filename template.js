@@ -74,32 +74,6 @@ exports.template = function(grunt, init, done) {
     // Actually copy (and process) files.
     init.copyAndProcess(files, props, {noProcess: 'libs/**'});
 
-    // Generate package.json file, used by npm and grunt.
-    init.writePackageJSON('package.json', {
-      name: 'jquery-plugin-object-oriented-lumbar',
-      version: '0.0.0-ignored',
-      npm_test: 'grunt qunit',
-      // TODO: pull from grunt's package.json
-      node_version: '>= 0.8.0',
-      devDependencies: {
-        'grunt-contrib-jshint': '~0.6.0',
-        'grunt-contrib-qunit': '~0.2.0',
-        'grunt-contrib-concat': '~0.3.0',
-        'grunt-contrib-uglify': '~0.2.0',
-        'grunt-contrib-watch': '~0.4.0',
-        'grunt-contrib-clean': '~0.4.0',
-        'underscore': '~1.4.4',
-        'lumbar': '~2.0.0-beta19',
-      },
-    });
-
-    // Generate jquery.json file.
-    init.writePackageJSON(props.jqueryjson, props, function(pkg, props) {
-      // The jQuery site needs the "bugs" value as a string.
-      if ('bugs' in props) { pkg.bugs = props.bugs; }
-      return pkg;
-    });
-
     // All done!
     done();
   });

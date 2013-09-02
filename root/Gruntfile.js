@@ -84,7 +84,7 @@ module.exports = function(grunt) {
    grunt.loadNpmTasks('grunt-contrib-jshint');
 
    // Default task.
-   grunt.registerTask('default', [
+   var allTasks = [
       'clean',
       'jshint:gruntfile',
       'jshint:test',
@@ -93,6 +93,15 @@ module.exports = function(grunt) {
       'jshint:dist',
       'qunit',
       'uglify'
-   ]);
+   ];
+
+   grunt.registerTask('default', allTasks);
+
+   // for now the travis task is the same as default, but since that might change
+   // we went ahead and set it up here so that the travis config wouldn't need to
+   // also change if we want to tweak how grunt runs when we are using travis
+   grunt.registerTask('travis', allTasks);
+
+   grunt.registerTask('notest', _.without(_.extend([], allTasks), 'qunit'));
 
 };

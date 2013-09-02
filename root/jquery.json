@@ -1,0 +1,27 @@
+{
+   "name": "{%= name %}",
+   "title": "{%= title %}",
+   "description": "{%= description %}",
+   "version": "{%= version %}",
+   "homepage": "{%= homepage %}",
+   "author": {
+      "name": "{%= author_name %}",
+      "email": "{%= author_email %}",
+      "url": "{%= author_url %}"
+   },
+   "repository": {
+      "type": "git",
+      "url": "{%= repository %}"
+   },
+   "bugs": "{%= bugs %}",
+   "licenses": [
+      {
+         "type": "{%= licenses %}",
+         "url": "{%= homepage %}/blob/master/LICENSE-{%= licenses %}"
+      }
+   ],
+   "dependencies": {
+      "jquery": ">=1.9"
+   },
+   "keywords": []
+}
